@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Clicker from "./components/Clicker";
 
-function App() {
+const App = () => {
+  const [isClicker, setClicker] = useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>React App</h1>
+      <button
+        onClick={() => setClicker(!isClicker)}
+        className="btn btn-primary"
+      >
+        Toggle shower
+      </button>
+      <br />
+      <br />
+      {isClicker && <Clicker />}
+      {}
     </div>
   );
-}
+};
 
 export default App;
